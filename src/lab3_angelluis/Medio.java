@@ -9,24 +9,31 @@ package lab3_angelluis;
  *
  * @author Luis Enriquez
  */
-class Medio extends Jugador{
-      int lvlCreatividad;
+class Medio extends Jugador {
+
+    int lvlCreatividad;
     int lvlDominio;
     double avgAsist;
+    boolean titular;
 
+    public boolean isTitular() {
+        return titular;
+    }
+
+    public void setTitular(boolean titular) {
+        this.titular = titular;
+    }
+    
+    
     public Medio() {
         super();
     }
-
-   
 
     public Medio(int lvlCreatividad, int lvlDominio, double avgAsist) {
         this.lvlCreatividad = lvlCreatividad;
         this.lvlDominio = lvlDominio;
         this.avgAsist = avgAsist;
     }
-
-
 
     public int getLvlCreatividad() {
         return lvlCreatividad;

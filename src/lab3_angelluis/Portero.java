@@ -12,9 +12,17 @@ package lab3_angelluis;
 class Portero extends Jugador{
     int lvlAereo;
     int lvlPies;
-
+    boolean titular;
     public Portero() {
         super();
+    }
+
+    public boolean isTitular() {
+        return titular;
+    }
+
+    public void setTitular(boolean titular) {
+        this.titular = titular;
     }
 
    

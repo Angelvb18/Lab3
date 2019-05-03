@@ -14,13 +14,22 @@ class Defensa extends Jugador{
     double altura;
     double peso;
     int velocidad;
-
+    boolean titular;
+    
     public Defensa() {
         super();
     }
 
-   
+    public boolean isTitular() {
+        return titular;
+    }
 
+    public void setTitular(boolean titular) {
+        this.titular = titular;
+    }
+
+   
+   
     public Defensa(int lvlAgresividad, double altura, double peso, int velocidad) {
         this.lvlAgresividad = lvlAgresividad;
         this.altura = altura;

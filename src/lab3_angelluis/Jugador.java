@@ -20,6 +20,14 @@ class Jugador {
     double precio;
     String equipo;
 
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
     public Jugador(String nombre, String apellido, int edad, String pais, String piePreferido, double precio, String equipo) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -44,6 +52,7 @@ class Jugador {
     
 
     public Jugador() {
+        super();
     }
         
     public String getNombre() {

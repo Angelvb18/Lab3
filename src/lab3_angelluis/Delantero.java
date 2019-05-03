@@ -9,12 +9,22 @@ package lab3_angelluis;
  *
  * @author Luis Enriquez
  */
-class Delantero extends Jugador{
+class Delantero extends Jugador {
+
     int lvlDefinicion;
     double altura;
     double velocidad;
     double avgGoles;
+    boolean titular;
 
+    public boolean isTitular() {
+        return titular;
+    }
+
+    public void setTitular(boolean titular) {
+        this.titular = titular;
+    }
+    
     public Delantero(int lvlDefinicion, double altura, double velocidad, double avgGoles, String nombre, String apellido, int edad, String estado, String pais, String piePreferido, String equipo) {
         super();
         this.lvlDefinicion = lvlDefinicion;
@@ -29,8 +39,6 @@ class Delantero extends Jugador{
         this.velocidad = velocidad;
         this.avgGoles = avgGoles;
     }
-
-
 
     public Delantero() {
     }
@@ -71,5 +79,5 @@ class Delantero extends Jugador{
     public String toString() {
         return "Delantero{" + "lvlDefinicion=" + lvlDefinicion + ", altura=" + altura + ", velocidad=" + velocidad + ", avgGoles=" + avgGoles + '}';
     }
-    
+
 }
