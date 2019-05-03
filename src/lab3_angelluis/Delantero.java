@@ -15,18 +15,16 @@ class Delantero extends Jugador {
     double altura;
     double velocidad;
     double avgGoles;
-    boolean titular;
-
-    public boolean isTitular() {
-        return titular;
-    }
-
-    public void setTitular(boolean titular) {
-        this.titular = titular;
-    }
     
-    public Delantero(int lvlDefinicion, double altura, double velocidad, double avgGoles, String nombre, String apellido, int edad, String estado, String pais, String piePreferido, String equipo) {
-        super();
+    
+    public Delantero( String nombre, String apellido, int edad, String estado, String pais, String piePreferido, int lvlDefinicion, double altura, double velocidad, double avgGoles ) {
+        super.nombre = nombre;
+        super.apellido=apellido;
+        super.edad=edad;
+        super.piePreferido=piePreferido;
+        super.estado=estado; 
+        super.pais=pais;
+       
         this.lvlDefinicion = lvlDefinicion;
         this.altura = altura;
         this.velocidad = velocidad;

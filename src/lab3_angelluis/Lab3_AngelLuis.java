@@ -22,9 +22,10 @@ public class Lab3_AngelLuis {
         Scanner lea = new Scanner(System.in);
 
         String nombre, apellido, estado, nacionalidad, piepr = "", euipo, palmares, ciudad;
-        int num, edad, posj, pos;
-        double precio, prep;
-        ArrayList<Jugador> sincomprar = new ArrayList();
+        int num, edad, posj, pos, w;
+        double precio, prep, x, y, z;
+        Jugador j = new Jugador();
+        ArrayList sincomprar = new ArrayList();
         ArrayList<Equipo> equipos = new ArrayList();
 
         while (op != 7) {
@@ -33,37 +34,162 @@ public class Lab3_AngelLuis {
             op = lea.nextInt();
             switch (op) {
                 case 1://Crear jugadores
-                    
-                    System.out.println("Ingrese nombre");
-                    nombre = lea.next();
-                    System.out.println("Ingrese apellido");
-                    apellido = lea.next();
-                    System.out.println("Ingrese edad");
-                    edad = lea.nextInt();
-                    System.out.println("Ingrese precio");
-                    precio = lea.nextDouble();
-                    System.out.println("1.Derecho\n2.Izquierdo");
+                    System.out.println("1.Crear\n2.Modificar\n3.Eliminar");
                     op2 = lea.nextInt();
-                    while (op2 > 2 || op2 < 1) {
-                        System.out.println("1.Derecho\n2.Izquierdo");
-                        op2 = lea.nextInt();
-                    }
                     switch (op2) {
                         case 1:
-                            piepr = "Derecho";
-                            break;
-                        case 2:
-                            piepr = "Izquierdo";
-                            break;
+                            System.out.println("Ingrese nombre");
+                            nombre = lea.next();
+                            System.out.println("Ingrese apellido");
+                            apellido = lea.next();
+                            System.out.println("Ingrese edad");
+                            edad = lea.nextInt();
+                            System.out.println("Ingrese precio");
+                            precio = lea.nextDouble();
+                            System.out.println("1.Derecho\n2.Izquierdo");
+                            op2 = lea.nextInt();
+                            while (op2 > 2 || op2 < 1) {
+                                System.out.println("1.Derecho\n2.Izquierdo");
+                                op2 = lea.nextInt();
+                            }
+                            switch (op2) {
+                                case 1:
+                                    piepr = "Derecho";
+                                    break;
+                                case 2:
+                                    piepr = "Izquierdo";
+                                    break;
+                            }
+                            System.out.println("Ingrese pais");
+                            String pais = lea.next();
+                            System.out.println("1.Delantero\n2.Defensa\n3.Portero\n4.Medio");
+                            op2 = lea.nextInt();
 
+                            if (op2 == 1) {
+                                System.out.println("Nivel de definicion: ");
+                                int lvlDefinicion= lea.nextInt();
+                                System.out.println("Altura: ");
+                                double altura = lea.nextDouble();
+                                System.out.println("Velocidad: ");
+                                
+                                double velocidad = lea.nextInt();
+                                System.out.println("Promedio de goles: ");
+                                double avgGoles = lea.nextInt();
+                                sincomprar.add(new Delantero(nombre, apellido, edad, estado = "nv", pais, piepr, lvlDefinicion, altura, velocidad, avgGoles));
+
+                            }
+                            if (op2 == 2) {
+                                System.out.println("Nivel de agilidad: ");
+                                int lvlAg = lea.nextInt();
+                                System.out.println("Altura: ");
+                                double altura = lea.nextDouble();
+                                System.out.println("Peso: ");
+                                double peso = lea.nextDouble();
+                                System.out.println("Velocidad: ");
+                                int velocidad = lea.nextInt();
+                                sincomprar.add(new Defensa(nombre, apellido, edad, estado = "nv", pais, piepr, lvlAg, altura, peso, velocidad));
+                            }
+                            
+                            if (op2 == 3) {
+                                System.out.println("Nivel aereo: ");
+                                int lvlA = lea.nextInt();
+                                System.out.println("Nivel a pie: ");
+                                int lvlP = lea.nextInt();
+                                sincomprar.add(new Portero(nombre, apellido, edad, estado = "nv", pais, piepr, lvlA, lvlP));
+                            }
+                            if (op == 4) {
+                                System.out.println("Ingrese nivel de creatividad: ");
+                                int lvlC = lea.nextInt();
+                                System.out.println("Ingrese nivel de dominio: ");
+                                int lvlD = lea.nextInt();
+                                System.out.println("Promedio de goles: ");
+                                double avgA = lea.nextDouble();
+
+                                sincomprar.add(new Medio(nombre, apellido, edad, estado = "nv", pais, piepr,lvlC, lvlD, avgA));
+                            }
+
+                    
+
+                    break;
+                    
+                    
+                    case 2:
+                        System.out.println("Ingrese posicion del equipo");
+                        pos = lea.nextInt();
+                        System.out.println("Ingrese poscion del jugador");
+                        num = lea.nextInt();
+                        System.out.println("1.Nombre\n2.Apellido\n3.Edad\n4.precio\n5.pie");
+                        op2 = lea.nextInt();
+                        switch (op2) {
+                            case 1:
+                                System.out.println("Ingrese nombre");
+                                nombre = lea.next();
+                                break;
+                            case 2:
+                                System.out.println("Ingrese apellido");
+                                apellido = lea.next();
+                                break;
+                            case 3:
+                                System.out.println("Ingrese edad");
+                                edad = lea.nextInt();
+                                break;
+                            case 4:
+                                System.out.println("Ingrese precio");
+                                precio = lea.nextDouble();
+                                break;
+                            case 5:
+                                System.out.println("1.Derecho\n2.Izquierdo");
+                                op2 = lea.nextInt();
+                                while (op2 > 2 || op2 < 1) {
+                                    System.out.println("1.Derecho\n2.Izquierdo");
+                                    op2 = lea.nextInt();
+                                }
+                                switch (op2) {
+                                    case 1:
+                                        piepr = "Derecho";
+                                        break;
+                                    case 2:
+                                        piepr = "Izquierdo";
+                                        break;
+
+                                }
+                                break;
+                            default:
+                                System.out.println("No valido");
+                                break;
+                        }
+                        break;
+
+                    case 3:
+                        System.out.println("1.Eliminar de equipo\n2.Eliminar no comprados");
+                        op2 = lea.nextInt();
+                        switch (op2) {
+                            case 1:
+                                System.out.println("Ingrese posicion del equipo");
+                                op2 = lea.nextInt();
+                                System.out.println("Ingrese posion del jugador");
+                                pos = lea.nextInt();
+                                equipos.get(op2).getListaj().remove(pos);
+                                break;
+                            case 2:
+                                System.out.println("Ingrese posion del jugador");
+                                pos = lea.nextInt();
+                                sincomprar.remove(pos);
+                            default:
+                                System.out.println("No valido");
+                                break;
+                        }
+                        break;
+                    default:
+                        System.out.println("No valido");
+                        break;
+            
+            
+            
+        
                     }
-                    sincomprar.add(new Jugador(nombre, apellido, edad, euipo = "no tiene", piepr, precio, euipo));
-
-                    break;
-                default:
-                    System.out.println("Ingreso uno opcion no valida");
-                    break;
-                case 2://
+            
+                case 2:
                     System.out.println("1.Crear\n2.Eliminar\nIngrese un numero:");
                     op2 = lea.nextInt();
                     if (op2 == 1) {
@@ -91,50 +217,26 @@ public class Lab3_AngelLuis {
                     System.out.println("Seleccione el equipo: ");
                     printEquipos(equipos);
                     System.out.print("Opcion: ");
-                    pos = lea.nextInt();
+                    int pose = lea.nextInt();
                     
                     System.out.println("Seleccione el jugador: ");
-                    printJugadores(equipos.get(pos).getListaj());
+                    printJugadores(equipos.get(pose).getListaj());
                     System.out.print("Opcion: ");
                     int pos2 = lea.nextInt();
-                    System.out.println("Que posicion?");
-                    System.out.println("1. Delantero");
-                    System.out.println("2. Medio");
-                    System.out.println("3. Defensa");
-                    System.out.println("4. Portero");
-                    System.out.print("Opcion: ");
-                    int subop = lea.nextInt();
-
-                    switch (subop) {
-                        case 1:
-                            // get equipo get arraylist add new Delantero
-                            // get equipo get arraylist size -1, set de las caracteristicas;
-                            break;
-                                    
-
-                        case 2:
-                            // get equipo get arraylist add new Medio
-                            // get equipo get arraylist size -1, set de las caracteristicas;
-                            break;
-
-                        case 3:
-                            // get equipo get arraylist add new Defensa
-                            // get equipo get arraylist size -1, set de las caracteristicas;
-                            break;
-
-                        case 4:
-                            // get equipo get arraylist add new Portero
-                            // get equipo get arraylist size -1, set de las caracteristicas;
-                            break;
-                    }
+                    
+                    Object obj = sincomprar.get(pos2);
+                    
+                    equipos.get(pose).getListaj().add(obj);
+                          
 
                     break;
                 case 4:
+                    /*
                     System.out.println("Seleccione el equipo: ");
                     printEquipos(equipos);
                     System.out.print("Opcion: ");
                     pos = lea.nextInt();
-
+                    
                     do {
 
                         System.out.println("Sus jugadores: ");
@@ -158,25 +260,21 @@ public class Lab3_AngelLuis {
 
                         }
                     } while (posj > -1);
-
-                    System.out.println("Listo!");
+                    */
+                    System.out.println("Este metodo no sirve! :v");
 
                     break;
                 case 5:
-                    System.out.println("Ingrese posicion de el equipo en la lista");
-                    num = lea.nextInt();
-                    while (num >= equipos.size()) {
-                        System.out.println("Ingrese posicion de el equipo en la lista");
-                        num = lea.nextInt();
-                    }
+                    printEquipos(equipos);
 
                     break;
                 case 6:
                     System.out.println("Jugadores con equipos");
                     for (int i = 0; i < equipos.size(); i++) {
-                        System.out.println();
+                        printJugadores(equipos.get(i).getListaj());
                     }
                     System.out.println("Jugadores sin quipo");
+                    printJugadores(sincomprar);
                     break;
                 case 7:
                     System.out.println("Adiós");
@@ -194,7 +292,7 @@ public class Lab3_AngelLuis {
 
     public static void printJugadores(ArrayList<Jugador> x) {
         for (int i = 0; i < x.size(); i++) {
-            System.out.println(i + " " + x.toString());
+            System.out.println(i + "." + x.toString());
         }
     }
 }

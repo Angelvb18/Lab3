@@ -19,7 +19,16 @@ class Jugador {
     int numero = 0;
     double precio;
     String equipo;
+    boolean titular;
+    
+    public boolean isTitular() {
+        return titular;
+    }
 
+    public void setTitular(boolean titular) {
+        this.titular = titular;
+    }
+    
     public double getPrecio() {
         return precio;
     }
@@ -28,7 +37,7 @@ class Jugador {
         this.precio = precio;
     }
 
-    public Jugador(String nombre, String apellido, int edad, String pais, String piePreferido, double precio, String equipo) {
+    public Jugador(String nombre, String apellido, int edad, String pais, String piePreferido, double precio) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
@@ -121,6 +130,8 @@ class Jugador {
 
     @Override
     public String toString() {
-        return "Jugador{" + "nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", estado=" + estado + ", pais=" + pais + ", piePreferido=" + piePreferido + ", numero=" + numero + ", equipo=" + equipo + '}';
+        return "Jugador{" + "nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", estado=" + estado + ", pais=" + pais + ", piePreferido=" + piePreferido + ", numero=" + numero + ", precio=" + precio + '}';
     }
+
+   
 }

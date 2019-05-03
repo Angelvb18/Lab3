@@ -14,29 +14,28 @@ class Defensa extends Jugador{
     double altura;
     double peso;
     int velocidad;
-    boolean titular;
     
-    public Defensa() {
-        super();
-    }
-
-    public boolean isTitular() {
-        return titular;
-    }
-
-    public void setTitular(boolean titular) {
-        this.titular = titular;
-    }
-
-   
-   
+ 
     public Defensa(int lvlAgresividad, double altura, double peso, int velocidad) {
         this.lvlAgresividad = lvlAgresividad;
         this.altura = altura;
         this.peso = peso;
         this.velocidad = velocidad;
     }
-
+    public Defensa( String nombre, String apellido, int edad, String estado, String pais, String piePreferido, int lvlAgresividad, double altura, double peso, int velocidad) {
+        super.nombre = nombre;
+        super.apellido=apellido;
+        super.edad=edad;
+        super.piePreferido=piePreferido;
+        super.estado=estado; 
+        super.pais=pais;
+        
+        this.lvlAgresividad = lvlAgresividad;
+        this.altura = altura;
+        this.peso = peso;
+        this.velocidad = velocidad;
+      
+    }
     public int getLvlAgresividad() {
         return lvlAgresividad;
     }

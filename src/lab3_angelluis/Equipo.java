@@ -16,7 +16,7 @@ public class Equipo {
     private String palmares;
     private String ciudad;
     private double presupuesto;
-    ArrayList<Jugador> listaj= new ArrayList();
+    ArrayList listaj= new ArrayList();
 
     public Equipo() {
     }
@@ -60,12 +60,17 @@ public class Equipo {
         this.presupuesto = presupuesto;
     }
 
-    public ArrayList<Jugador> getListaj() {
+    public ArrayList getListaj() {
         return listaj;
     }
 
-    public void setListaj(ArrayList<Jugador> listaj) {
+    public void setListaj(ArrayList listaj) {
         this.listaj = listaj;
+    }
+
+    @Override
+    public String toString() {
+        return "Equipo{" + "nombre=" + nombre + ", palmares=" + palmares + ", ciudad=" + ciudad + ", presupuesto=" + presupuesto + ", listaj=" + listaj + '}';
     }
     
     

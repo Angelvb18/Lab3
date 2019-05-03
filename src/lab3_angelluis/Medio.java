@@ -14,21 +14,21 @@ class Medio extends Jugador {
     int lvlCreatividad;
     int lvlDominio;
     double avgAsist;
-    boolean titular;
 
-    public boolean isTitular() {
-        return titular;
-    }
-
-    public void setTitular(boolean titular) {
-        this.titular = titular;
-    }
-    
-    
     public Medio() {
         super();
     }
-
+    public Medio( String nombre, String apellido, int edad, String estado, String pais, String piePreferido, int lvlCreatividad, int lvlDominio, double avgAsist) {
+        super.nombre = nombre;
+        super.apellido=apellido;
+        super.edad=edad;
+        super.piePreferido=piePreferido;
+        super.estado=estado; 
+        super.pais=pais;
+        this.lvlCreatividad = lvlCreatividad;
+        this.lvlDominio = lvlDominio;
+        this.avgAsist = avgAsist;
+    }
     public Medio(int lvlCreatividad, int lvlDominio, double avgAsist) {
         this.lvlCreatividad = lvlCreatividad;
         this.lvlDominio = lvlDominio;
