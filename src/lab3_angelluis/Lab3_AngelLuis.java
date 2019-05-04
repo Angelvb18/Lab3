@@ -231,38 +231,55 @@ public class Lab3_AngelLuis {
 
                     break;
                 case 4:
-                    /*
-                    System.out.println("Seleccione el equipo: ");
+                    ArrayList alineacion = new ArrayList();
                     printEquipos(equipos);
-                    System.out.print("Opcion: ");
-                    pos = lea.nextInt();
+                    System.out.println("Ingrese posicion del equipo");
+                    num=lea.nextInt();
+                    int d,de,m;
                     
+                    System.out.println("Ingrese defensas");
+                    de=lea.nextInt();
+                    System.out.println("Ingrese delanteros");
+                    d=lea.nextInt();
+                    System.out.println("Ingrese medios");
+                    m=lea.nextInt();
+                    printJugadores(equipos.get(num).getListaj());
+                    for (int i = 0; i < d;) {
+                        System.out.println("Ingrese posicion de delantero "+(i+1)+"/"+d+":");
+                        int posIng = lea.nextInt();
+                        if (equipos.get(num).getListaj().get(posIng) instanceof Delantero) {
+                           alineacion.add(equipos.get(num).getListaj().get(posIng));
+                           i++;
+                        }
+                    }
+                    for (int i = 0; i < de;) {
+                        System.out.println("Ingrese posicion de defensa "+(i+1)+"/"+d+":");
+                        int posIng = lea.nextInt();
+                        if (equipos.get(num).getListaj().get(posIng) instanceof Defensa) {
+                           alineacion.add(equipos.get(num).getListaj().get(posIng));
+                           i++;
+                        }
+                    }
+                    for (int i = 0; i < m;) {
+                        System.out.println("Ingrese posicion de mediocampista "+(i+1)+"/"+d+":");
+                        int posIng = lea.nextInt();
+                        if (equipos.get(num).getListaj().get(posIng) instanceof Medio) {
+                           alineacion.add(equipos.get(num).getListaj().get(posIng));
+                           i++;
+                        }
+                    }
+                    int v= 1;
                     do {
-
-                        System.out.println("Sus jugadores: ");
-                        for (int i = 0; i < equipos.get(pos).getListaj().size() - 1; i++) {
-                            if (equipos.get(pos).getListaj().get(i).isTitular()) {
-                                System.out.println(i + ". TITULAR: " + equipos.get(pos).getListaj().get(i).getNombre() + equipos.get(pos).getListaj().get(i).getApellido());
-
-                            } else {
-                                System.out.println(i + ". NO TITULAR: " + equipos.get(pos).getListaj().get(i).getNombre() + equipos.get(pos).getListaj().get(i).getApellido());
-                            }
+                        
+                        System.out.println("Por ultimo, su portero: ");
+                        int posIng = lea.nextInt();
+                        if (equipos.get(num).getListaj().get(posIng) instanceof Portero) {
+                           alineacion.add(equipos.get(num).getListaj().get(posIng));
+                           v = 2;
+                        }else{
+                            System.out.println("No es portero!");                           
                         }
-
-                        System.out.print("Ingrese el jugador a cambiar o -1 para salir: ");
-                        posj = lea.nextInt();
-
-                        if (equipos.get(pos).getListaj().get(posj).isTitular()) {
-                            equipos.get(pos).getListaj().get(posj).setTitular(false);
-
-                        } else {
-                            equipos.get(pos).getListaj().get(posj).setTitular(true);
-
-                        }
-                    } while (posj > -1);
-                    */
-                    System.out.println("Este metodo no sirve! :v");
-
+                    } while (v == 1);
                     break;
                 case 5:
                     printEquipos(equipos);
